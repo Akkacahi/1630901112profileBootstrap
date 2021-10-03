@@ -1,0 +1,581 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box; ;/* ?ใส่เพื่อรกำหนด border หรือ padding แล้วไม่ไปเปลี่ยนความกว้างและความสูงของอีลีเม้นท์  */
+    font-family: 'Exo 2', sans-serif;
+    
+    transition: all .2s linear;
+  } 
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  nav{
+    display: flex;  /*?ใช้คำสั่ง  "display: flex" เพ่ื่อทำให้ element มีรูปแบบการแสดงเป็น "Flex Box"*/
+    height: 120px; /*?ขนาดของช่อง*/
+    width: 100%;
+    background: #d8d7d7;
+    align-items: center;  /*? จัดตำแหน่งของ Flex Item ในแนวตั้ง ภายใน Flex Container เพื่อจัด item ทั้งหมดให้อยู่ตรงกลาง */
+    justify-content: space-between;  /*?คำสั่งกำหนดการจัดตำแหน่งของ Flex Item โดยใช้คำสั่ง space-between: เพื่อจัดให้อยู่ระหว่างกัน */
+    padding: 0 50px 0 100px;  /*?เป็นคำสั่งใช้แบ่งแยกช่องว่าง*/
+    flex-wrap: wrap;  /*?ใช้กำหนด ให้ Flex Item ภายใน Flex Container โดยใช้คำสั่ง  wrap การกำหนดให้ Flex Item มีการดันลงมาด้านล่างตามขนาดของ Flex Container โดยมีการจัดเรียง Flex Item จากบนลงล่าง*/
+    box-shadow: 0 .1rem .5rem rgba(51,51,51,.5); /*?กำหนดเงา โดยใช้คำสั่ง box:shadow 0 เป็นการกำหนดเงาทางด้านขวาของกล่อง 1 เป็นการกำหนดเงาด้านล่าง 5 เป็นการกำหนดความสว่างของเงา*/
+    position:fixed; /* ?ใช้คำสั่งนี้ เพื่อให้ Viewport อยู่ในตำแหน่งเดิมเสมอ แม้ว่าหน้าจะเลื่อนก็ตาม*/
+    top:0; left: 0; right: 0;
+    z-index:1140;
+    
+  }
+  
+  .logo img{
+    position:fixed;
+    left: 14px; 
+    width: 17vh;
+    top: 8px;
+    }
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none; /*?ใช้ลบจุดขาว*/
+  }
+  nav ul li{
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: #000000;
+    text-decoration: none; /*?คำสั่ง ลบเส้นข้าง ใต้ออก*/
+    font-size: 25px;
+    font-weight: 500; /* ?กำหนดความหนาของตัวอักษร */
+    padding: 8px 15px; 
+    letter-spacing: 1px;   /* ? กำหนดระยะห่างระหว่างตัวอักษร  */
+    transition: all 0.3s ease; /* ?ใช้เปลี่ยนแปลงค่าระหว่าง จุดเริ่มต้นและจุดจบเป็นไปอย่าง smooth มากขึ้น  โดยใช้คำสั่ง ease: เริ่มช้า กลางเร็วปกติ และ จบช้า*/
+    
+  }
+  nav ul li a.active,
+  nav ul li a:hover{   /* ? Hover ใช้ในกรณีที่ต้องการดักจับเหตุการณ์ เช่นวางเมาส์ไว้บน Elements ต่าง ๆ */
+    color: rgb(255, 255, 255);
+    }
+  nav .menu-btn i{
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    position:fixed;
+    right: 60px; top: 50px;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  
+  .section.flexContainer{
+      display: flex;
+      
+  }
+  
+  .flexContainer{
+      justify-content: space-around;
+  }
+  
+  /* !Home */
+  
+  #Home{
+    
+    min-height: 100vh; 
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    padding:0 9 rem;
+    background:rgb(39, 39, 39); 
+    margin-top: 5.1%;
+  }
+  
+  .image img{ 
+    width: 130%;
+    
+    
+  }
+  /* !about me */
+  button{
+    outline: none;
+    border: none;
+    background-color: #a6a5a4;
+    border-radius:  5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor:pointer;
+    margin:2rem 0;
+    height: 4rem;
+    width: 14rem;
+    }
+  button:hover{    /* ? Hover ใช้ในกรณีที่ต้องการดักจับเหตุการณ์ เช่นวางเมาส์ไว้บน Elements ต่าง ๆ */
+    background-color:#3c3d3e;
+  }
+  
+  
+  
+  .content h1{
+    
+    font-size: 3.5vh;
+    font-weight: normal;
+    color: teal;
+  }
+  
+  .content h1 span{
+    color: #ffffff;
+    font-family:'Lobstar',sans-serif;
+  }
+  
+  
+  /* !icon */
+  
+  .fa {
+    padding: 20px;
+    text-align: center;
+    
+    margin: 5px 2px;
+    border-radius: 50% 20% / 10% 40%;
+    
+    width: 50px;
+  }
+  .fa:hover {     /* ? Hover ใช้ในกรณีที่ต้องการดักจับเหตุการณ์ เช่นวางเมาส์ไว้บน Elements ต่าง ๆ */
+    opacity: 0.5;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  /* !icon end */
+  
+  
+  /* !about section */
+  
+  #About{
+    display: grid;
+    place-items: center;
+    width: 25%;
+    
+    min-height:100vh;
+    background-color: #a6a5a4;
+    margin:5% ;
+    
+    }
+  #About h1{
+    font-size: 5rem;
+    display:flex;
+    margin-top: 130px;
+    color:rgb(231, 231, 231) ;
+    background-color: #727170;  
+    width: 50%; height: 10rem;
+    margin-left: 70rem;
+    align-items: center;
+    padding-left: 20px;
+    
+  }
+  
+  
+  
+  
+  .wrappar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    
+  }
+  
+  
+  
+  .image1 img{
+    width: 30vw;
+    position:relative;
+    left: 10%;
+    box-shadow: 500vh rgba(51,51,51,.5);
+  
+    
+  
+  }
+  .content{
+    width: 70vw;
+    margin: 10%;
+    
+    
+  }
+  .content h2{
+    font-size: 4rem;
+    color:#424242
+  }
+  .content p{
+  
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #3c3d3e;
+  }
+  
+  /* !Experiences */
+  
+  #Experiences{
+    display: grid;
+    place-items: center;
+    width: 96%;
+    min-height:100vh;
+    background-color: rgb(39, 39, 39);
+    margin: 2%;
+  }
+  #Experiences h1{
+    font-size: 5rem;
+    margin-top: 15rem;
+    color: #d8d8d8;
+    position:relative;
+  }
+  
+  
+  .image2 img{
+    width: 40vw;
+    float: right;
+    position:relative;
+    left: 50px;
+    padding: 5%;
+    
+  }
+  .content2{
+    width: 35vw;
+    background-color: #757575;
+    height: 40vh;
+    margin-right:60vh;
+    padding: 2rem;
+    
+  }
+  .content2 h2{
+    font-size: 4rem;
+    color: #d8d7d7;
+    
+  }
+  .content2 p{
+    
+    font-size: 3rem;
+    margin: 1 rem 0;
+  }
+  
+  /* !Abilities sections */
+  #Abilities {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background: #E5E5E5;
+  }
+  
+  #Abilities h1 {
+    font-size: 4rem;
+   
+    color: #766A69;
+    position: relative;
+    margin-top: 10rem;
+  }
+  
+  #Abilities .wrapper {
+   display: flex;
+   position: relative;
+   
+  
+  }
+  
+  #Abilities .wrapper .image {
+    width: 35vw;
+    text-align: center;
+  }
+  
+  
+  
+  #Abilities .wrapper .image img {
+    width: 25vw;
+  }
+  
+
+  
+  /* !Projects */
+
+  .showcase{
+      background-color: #525252;
+  }
+
+  .text p{
+   font-size: 5rem;
+   text-align: center;
+   color:white ;
+  }
+  
+  .showcase-img {
+    background-size: cover;
+    min-height: 40rem;
+}
+.showcase-text {
+    padding: 8rem;
+    text-align: center;
+    color: white;
+}
+
+  /* !contact */
+  
+  #Contact {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  #Contact h1 {
+    font-size: 4rem;
+    margin: 4rem 0;
+    color: #766A69;
+    position: relative;
+    color: #131313;
+  }
+  
+  #Contact h1::after {
+    
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #766A69;
+    height: .4rem;
+    width: 80%;
+  }
+  
+  #Contact h1:after {    /* ?after จะเป็นคำสั่งไว้สำหรับกำหนดข้อมูลที่อยู่ต่อจาก before เมื่อมีการเรียกใช้งาน element ผ่าน id หรือ class นั้น ๆ */
+    background: #E5E5E5;
+  }
+  
+  #Contact .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+  }
+  
+  #Contact .wrapper .info {
+    width: 20%;
+  }
+  
+  #Contact .wrapper .info .item {
+    margin: 4rem 0;
+  }
+  
+  #Contact .wrapper .info .item h2 {
+    font-size: 3rem;
+    color: rgb(68, 68, 68);
+    margin: 1rem 0;
+  }
+  
+  #Contact .wrapper .info .item h2 i {
+    color: rgb(23, 75, 153);
+    padding: 0 .5rem;
+  }
+  
+  #Contact .wrapper .info .item p {
+    font-size: 2rem;
+    color: #474747;
+    padding-left: 4rem;
+  }
+  
+  #Contact .wrapper form {
+    width: 50vw;
+  }
+  
+  #Contact .wrapper form .inputBox h3 {
+    font-size: 2rem;
+    color: #5a5a5a;
+  }
+  
+  #Contact .wrapper form .inputBox input, #Contact .wrapper form .inputBox textarea {
+    outline: none;
+    border: 0.2rem solid #353535;
+    background: none;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    color: #252525;
+    font-size: 1.7rem;
+    font-weight: bold;
+    height: 4rem;
+    width: 100%;
+  }
+  
+  #Contact .wrapper form .inputBox textarea {
+    resize: none;
+    padding: 1rem;
+    height: 20rem;
+  }
+  /* !send */
+  
+  #Contact .wrapper form input[type="submit"] {
+    outline: none;
+    border: none;
+    background: #1d1d1d;
+    color: #3f3f3f;
+    border-radius: 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 2rem 0;
+    height: 4rem;
+    width: 14rem;
+    background: #494949;
+    color: #ffffff;
+  }
+  
+  #Contact .wrapper form input[type="submit"]:hover {  /* ? Hover ใช้ในกรณีที่ต้องการดักจับเหตุการณ์ เช่นวางเมาส์ไว้บน Elements ต่าง ๆ */
+    background: #333;
+  }
+  
+  #Contact .wrapper form input[type="submit"]:hover {
+    background: rgb(20, 103, 182);
+  }
+  
+  
+  /* !Media */
+  
+  @media (max-width: 1000px){
+    nav{
+      padding: 0 40px 0 50px;
+      position: fixed;
+     
+    }
+  }
+  @media (max-width: 920px) {
+    nav .menu-btn i{
+      display: block;
+    }
+    #click:checked ~ .menu-btn i:before{ /* ?before จะเป็นคำสั่งไว้สำหรับกำหนดข้อมูลที่อยู่ด้านหน้า เมื่อมีการเรียกใช้งาน element ผ่าน id หรือ class นั้น ๆ ข้อมูลใน content จะถูกนำไปแสดงในตำแหน่งหน้าสุด ตัวอย่างเช่น เมื่อเราเรียกใช้งาน p element และกำหนด content ให้เท่ากับ “Good” */
+      content: "\f00d";
+    }
+    nav ul{  /* !แก้ในส่วนของ menu bar  */
+      position: fixed;
+      top: 120px;
+      left: -100%;
+      background: rgb(65, 65, 65);
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    #click:checked ~ ul{
+      left: 0;
+    }
+    nav ul li{
+      width: 100%;
+      margin: 40px 0;
+    }
+    nav ul li a{
+      width: 100%;
+      margin-left: -100%;
+      display: block;
+      font-size: 20px;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked ~ ul li a{
+      margin-left: 0px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+      background: none;
+      color: rgb(248, 248, 248);
+    } 
+    
+    section{
+         flex-flow: column;
+         padding: 0;
+    }
+    .content {
+    text-align: center;
+    font-size: 2vh;
+    }
+    .content h1{
+      margin: 10px;
+      font-size: 2.5vh;
+      
+    }
+    .image img{ 
+      width:100%;
+      margin-top: 25%;
+  }
+
+
+    
+  
+  .wrappar{
+    flex-flow: column;
+    padding: 0;
+    text-align: center;
+}
+#About{
+    
+    width: 100%;
+     min-height:100vh;
+    background-color: #a6a5a4;
+    margin:0% ;
+    
+    }
+    
+     
+     #Experiences{
+
+    
+        text-align: center;
+      }
+      .image2 img{
+        width: 50vw;
+        float:unset;
+ 
+        left: 10px;
+        padding: 5%;
+        
+      }
+      #Experiences h1{
+        font-size: 4rem;
+        margin-top: 0rem;
+        color: #d8d8d8;
+        
+      }
+      .content2{
+        width: 100%;
+        text-align: center;
+        
+        
+      }
+      .content2 h2{
+        font-size: 2rem;
+        color: #d8d7d7;
+        
+      }
+      .content2 p{
+        
+        font-size: 1.5rem;
+        margin: 1 rem 0;
+      }
+      
+
+  }
